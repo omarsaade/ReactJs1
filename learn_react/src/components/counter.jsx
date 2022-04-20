@@ -38,7 +38,7 @@ class Counter extends Component {
   }
 
   formatCount() {
-    //Destructuring
+    ////Destructuring
 
     const { count } = this.state;
     return count === 0 ? "Zero" : count;
