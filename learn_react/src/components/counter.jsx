@@ -3,30 +3,28 @@ import React, { Component } from "react";
 
 //cc
 class Counter extends Component {
-  //state hye object
   state = {
     count: 0,
-    // imageUrl: "https://picsum.photos/200",
   };
 
-  //   this is how can put a css style
-  //   styles = {
-  //     fontSize: 10,
-  //     fontWeight: "bold",
-  //   };
+  handleIncrement = () => {
+    /* this.state.count++;//malh techtegel abdan
+    hala2 he btshil el poperty w bethet ma7al property jdide
+    li hye count ,btjib el value el adimw btejmas3o ma3 1  
+    w bta3melo return bi count */
+    this.setState({ count: this.state.count + 1 });
+  };
 
   render() {
-    // let classes = this.getBadgeClasses();
-
-    //hayda jsx
     return (
       <div>
-        {/* this yaane Counter */}
-        {/* <img src={this.state.imageUrl} alt="" /> */}
-        {/* <span style={this.styles} className="badge badge-primary m-2"> */}
-        {/* <span style={{ fontSize: 30 }} className="badge badge-primary m-2"> */}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
       </div>
     );
   }
