@@ -14,7 +14,7 @@ class Counter extends Component {
   //solution for passing 1 paramter
   //he iza habayna nmarae2 2 argument bel events
   // doHandleIncrement = () => {
-  //   this.handleIncrement({ id: 1 });
+  ////  this.handleIncrement({ id: 1 });
   // };
 
   render() {
