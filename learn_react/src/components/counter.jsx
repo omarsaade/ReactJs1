@@ -1,26 +1,31 @@
-// imrc
 import React, { Component } from "react";
 
-//cc
 class Counter extends Component {
   state = {
     count: 0,
   };
 
-  handleIncrement = () => {
-    /* this.state.count++;//malh techtegel abdan
-    hala2 he btshil el poperty w bethet ma7al property jdide
-    li hye count ,btjib el value el adimw btejmas3o ma3 1  
-    w bta3melo return bi count */
+  //fina nmare2 product iza badna
+  handleIncrement = (product) => {
+    console.log(product);
     this.setState({ count: this.state.count + 1 });
   };
+
+  //solution for passing 1 paramter
+  //he iza habayna nmarae2 2 argument bel events
+  // doHandleIncrement = () => {
+  //   this.handleIncrement({ id: 1 });
+  // };
 
   render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          // iza fi object
+          //hayde function reference,mafina na3mul call la fucntion
+          //3adye w na3mul pass la argument .we cant
+          onClick={() => this.handleIncrement({ id: 1 })}
           className="btn btn-secondary btn-sm"
         >
           Increment
