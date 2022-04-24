@@ -2,33 +2,30 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
+    value: this.props.counter.value,
   };
 
-  //fina nmare2 product iza badna
-  handleIncrement = (product) => {
-    console.log(product);
-    this.setState({ count: this.state.count + 1 });
+  handleIncrement = () => {
+    this.setState({ value: this.state.value + 1 });
   };
-
-  //solution for passing 1 paramter
-  //he iza habayna nmarae2 2 argument bel events
-  // doHandleIncrement = () => {
-  ////  this.handleIncrement({ id: 1 });
-  // };
 
   render() {
+    console.log("props", this.props);
     return (
       <div>
+        <h4>{this.props.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          // iza fi object
-          //hayde function reference,mafina na3mul call la fucntion
-          //3adye w na3mul pass la argument .we cant
-          onClick={() => this.handleIncrement({ id: 1 })}
+          onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm"
         >
           Increment
+        </button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
         </button>
       </div>
     );
@@ -36,15 +33,15 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
     ////Destructuring
 
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
     // return count === 0 ? <h1>Zero</h1> : count;
   }
 }
