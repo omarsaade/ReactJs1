@@ -11,8 +11,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 
 //cz counter is default export so we dont need the curly braces
-import Counters from './components/counters';
 
 
 
-ReactDOM.render(<Counters />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
