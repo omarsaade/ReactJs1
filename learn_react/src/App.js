@@ -12,8 +12,10 @@ class App extends Component {
     ],
   };
 
+
   // The indexOf() method returns the first index at which
-  //  a given element can be found in the array, or -1 if it is not present.
+  // a given element can be found in the array, or -1 if it is not present.
+
 
   handleIncrement = (counter) => {
     // console.log(counter);
@@ -28,6 +30,7 @@ class App extends Component {
     this.setState({ counters });
   };
 
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
@@ -38,14 +41,21 @@ class App extends Component {
     this.setState({ counters });
   };
 
+
+
   handleDelete = (counterId) => {
     // console.log("Event Handler Called", counterId);
-    const counters = this.state.counters.filter((c) => c.id !== counterId);
+    const counters = this.state.counters.filter(function (c) {
+      return c.id !== counterId;
+    });
     // console.log(counters);
     this.setState({ counters: counters });
     // fina nekteba hik , cz key and value are the same
     // this.setState({ counters });
   };
+
+
+
 
   render() {
     return (
@@ -63,5 +73,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
