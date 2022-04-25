@@ -11,12 +11,28 @@ class Counters extends Component {
     ],
   };
 
+  // The indexOf() method returns the first index at which
+  //  a given element can be found in the array, or -1 if it is not present.
+
+  handleIncrement = (counter) => {
+    // console.log(counter);
+    const counters = [...this.state.counters];
+    // console.log(counters);
+    const index = counters.indexOf(counter);
+    // counters[0] = {id:1,value:4}
+    counters[index] = { ...counter };
+    // console.log(counters[index]);
+    counters[index].value++;
+    this.setState({ counters });
+  };
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
-      //   console.log(c);
+      // console.log(c);
       return c;
     });
+    console.log(counters);
     this.setState({ counters });
   };
 
@@ -42,10 +58,12 @@ class Counters extends Component {
           <Counter
             key={counter.id}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
             // value={counter.value}
             // id={counter.id}
             //he badal ma kell marra nkarer id w value
             //mnektob he li tahet
+            // counter = { id: 1, value: 4}
             counter={counter}
           />
         ))}
