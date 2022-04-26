@@ -1,8 +1,28 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log("PrevProps ", prevProps);
+  //   console.log("PrevProps ", prevState);
+  //   if (prevProps.counter.value !== this.props.counter.value) {
+  //     //Ajax call and get new data from the server
+  //     //       PrevProps
+  //     // {counter: {…}, onDelete: ƒ, onIncrement: ƒ}
+  //     // counter: {id: 1, value: 5}
+  //     // onDelete: counterId => {…}
+  //     // onIncrement: counter => {…}
+  //     // key: (...)
+  //     // get key: ƒ ()
+  //     // [[Prototype]]: Object
+  //   }
+  // }
+  componentWillUnmount() {
+    console.log("Counter - Unmout");
+  }
+
   render() {
     // console.log("props", this.props);
+    console.log("counter rendered");
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>

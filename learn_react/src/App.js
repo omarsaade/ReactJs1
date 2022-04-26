@@ -11,7 +11,14 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+  constructor() {
+    super();
+    console.log("App constructor");
+  }
 
+  componentDidMount() {
+    console.log('App mounted');
+  }
 
   // The indexOf() method returns the first index at which
   // a given element can be found in the array, or -1 if it is not present.
@@ -58,6 +65,7 @@ class App extends Component {
 
 
   render() {
+    console.log('App rendered');
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
