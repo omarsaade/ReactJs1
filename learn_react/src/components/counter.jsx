@@ -16,6 +16,7 @@ class Counter extends Component {
   //     // [[Prototype]]: Object
   //   }
   // }
+  //
   componentWillUnmount() {
     console.log("Counter - Unmout");
   }
